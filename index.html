@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <script src="app.js" charset="utf-8"> </script>
+        <link rel="stylesheet" href="tetrisStyle.css">
+        <title>Basic-Beginner Tetris</title>
+    </head>
+    <body>
+        <h3>Score:<span id="score">0</span></h3>
+        <button id="start-button">Start/Pause</button>
+
+ 
+        <div class="grid">
+        
+        </div>
+
+
+        <script>
+
+            let html = "";
+            for(i = 0; i < 200; i++){
+                html += "<div></div>";
+            }
+            
+            document.querySelector(".grid").innerHTML += html;
+            
+            console.log(html);
+        </script>
+    </body>
+</html>
