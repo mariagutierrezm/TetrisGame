@@ -96,11 +96,23 @@ document.addEventListener('DOMContentLoaded', () => {
         undraw(); //remove any previous drawing to have a clean slate
         //define the left edge and if the shape is in it
         //we select the current shape, and check if some of the shape indexes divided by the width leave exactly no remainder
-        const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0);
-        
+        const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0); //width 10 AKA index 10 and 10/10=0 so means is at the edge
+        //shape can only move if is not at the left edge
+        if(!isAtLeftEdge) {
+            currentPosition -= 1; //shape can move minus 1 of its current position, which will be left (remember is all wrapped but also is going down on index)
+        }
+        //shape to stop if there is another shape there that has been frozen. take the 'taken' class to assign it to the spaces that have been taken
+        //if the squares go into a space that contains a class of taken we want to push it back one space, so it seems it has not moved
+        if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+            currentPosition += 1; //we add one so it moves back to its original space
+        }
+
+        draw();
     }
 
-
+function moveRight() {
+    console.log('hello'); 
+}
 
 
 
