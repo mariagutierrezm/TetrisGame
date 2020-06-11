@@ -65,6 +65,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     draw()
+    // setinterval = allows us to invoke a function that we pass through it after X amount of time
+
+    timerId = setInterval(moveDown, 1000) //assign it to timerId to stop setinterval in the future. This makes the shapes move down every second
+
+    function moveDown(){
+        undraw(); //we want to undraw
+        currentPosition += width; //then write a new width in the current position
+        draw(); //then draw it in the new position 
+        freeze(); //it invokes it and checks it every second
+    }
+
+    function freeze() { //some() checking that the logic that we write is true for some of the items in the array
+        //if some of the squares that make the current shape() (of one piece of tetris), if their index plus a whole width contains a square with a class name of taken
+        if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
+            //we turn each of the shape squares into a square that contains the class of taken 
+            current.forEach(index => squares[currentPosition + index].classList.add('taken'))
+            //we get another shape to fall down
+            random = Math.floor(Math.random() * shapes.length);
+            // we pass this to the shapes array and it's fast rotation, and set it as the current shape
+            current = shapes[random][currentRotation]
+            // put it in the current position
+            currentPosition = 4;
+            //draw the selected shape
+            draw();
+        } 
+    }
+
+    function moveLeft() {
+        undraw(); //remove any previous drawing to have a clean slate
+        //define the left edge and if the shape is in it
+        //we select the current shape, and check if some of the shape indexes divided by the width leave exactly no remainder
+        const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0);
+        
+    }
+
 
 
 
