@@ -10,25 +10,31 @@
         <h3>Score:<span id="score">0</span></h3>
         <button id="start-button">Start/Pause</button>
 
- 
-        <div class="grid">
-        
+        <div class="container">
+            <div class="grid"></div>
+            <div class="mini-grid"></div>
         </div>
 
-
+        
         <script>
 
-            let html = "";
+            let htmlGrid = "";
+            let htmlMiniGrid = "";
             for(i = 0; i < 200; i++){
-                html += "<div></div>";
+                htmlGrid += "<div></div>";
             }
             
             for(i = 0; i < 10; i++){
-                html += "<div class='taken'></div>";
+                htmlGrid += "<div class='taken'></div>";
             }
-            document.querySelector(".grid").innerHTML += html;
+
+            for(i = 0; i < 16; i++) {
+                htmlMiniGrid += "<div></div>";
+            }
+            document.querySelector(".grid").innerHTML += htmlGrid;
+            document.querySelector(".mini-grid").innerHTML += htmlMiniGrid;
             
-            console.log(html);
+            console.log(htmlMiniGrid);
         </script>
     </body>
 </html>
