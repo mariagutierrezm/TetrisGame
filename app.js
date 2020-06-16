@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.container');
     const grid = document.querySelector('.grid');
     let squares = Array.from(document.querySelectorAll('.grid div'));
     const width = 10;
@@ -7,13 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let nextRandom = 0;
     let timerId;
     let score = 0;
-    const colors = [
-        'orange',
-        'blue',
-        'purple',
-        'grey',
-        'yellow'
-    ]
+    const colors = ['rgb(255, 178, 111)', 'rgb(93, 255, 151)', 'rgb(220, 114, 255)', 'rgb(255, 135, 156)', 'rgb(255, 226, 122)']; 
+    //     'purple', 'rgb(115,191,68)'
 
     const lShape = [
         [1, width + 1, width * 2 + 1, 2],
@@ -62,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         current.forEach(index => {
             squares[currentPosition + index].classList.add('shapes');
             squares[currentPosition + index].style.backgroundColor = colors[random]; 
+
         })
     }
 
@@ -97,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
             current.forEach(index => squares[currentPosition + index].classList.add('taken'));
             random = nextRandom; 
-            console.log(random, '2ND RANDOM');
             nextRandom = Math.floor(Math.random() * shapes.length);
             current = shapes[random][currentRotation]
             currentPosition = 4;
@@ -148,14 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const displaySquares = document.querySelectorAll('.mini-grid div');
     const displayWidth = 4;
-    const displayIndex = 0;
+    const displayIndex = 1;
 
     const nextShape = [ //shapes without rotation
-        [1, displayWidth + 1, displayWidth * 2 + 1, 2], //lshape
+        [0, displayWidth, displayWidth * 2, 1], //lshape
         [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1], //zshape
         [1, displayWidth, displayWidth + 1, displayWidth + 2], //tshape
         [0, 1, displayWidth, displayWidth + 1], //oshape
-        [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1] //ishape
+        [0, displayWidth, displayWidth * 2, displayWidth * 3] //ishape
     ];
 
     function displayShape() {
@@ -206,7 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
          if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
              scoreDisplay.innerHTML = 'end'; 
               clearInterval(timerId);
+            //   container.innerHTML += '<div class"restart">Game Over</div>';
          }
+
+        
         
     }
 

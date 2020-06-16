@@ -4,15 +4,25 @@
         <meta charset="utf-8">
         <script src="app.js" charset="utf-8"> </script>
         <link rel="stylesheet" href="tetrisStyle.css">
+        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
         <title>Basic-Beginner Tetris</title>
     </head>
     <body>
-        <h3>Score:<span id="score">0</span></h3>
-        <button id="start-button">Start/Pause</button>
+        <div class="title">
+            <h1>Hello Tetris!</h1>
+        </div>
+        
 
         <div class="container">
+            
             <div class="grid"></div>
-            <div class="mini-grid"></div>
+            <div class="grid-right">
+                <div class="grid-right__info">
+                    <div class="mini-grid"></div>
+                    <h3>SCORE:<span id="score">0</span></h3>
+                </div>
+                <button class="text btn" id="start-button">Start/Pause</button>
+            </div>
         </div>
 
         
@@ -21,7 +31,7 @@
             let htmlGrid = "";
             let htmlMiniGrid = "";
             for(i = 0; i < 200; i++){
-                htmlGrid += "<div></div>";
+                htmlGrid += "<div class='grid__pixels'></div>";
             }
             
             for(i = 0; i < 10; i++){

@@ -1,36 +1,99 @@
+html * {
+    box-sizing: border-box;
+    /* background: rgb(2,145,214); */
+}
+
+body {
+    background: linear-gradient(90deg, rgba(2,145,214,1) 0%, rgba(137,214,232,1) 51%, rgba(2,145,214,1) 100%);
+}
+
+/* utils */
+.text, h3 {
+    font-family: 'Teko', sans-serif;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    color: blanchedalmond;
+    font-family: fantasy;
+}
+
 .container {
     display: flex;
     justify-content: center;
+    
 }
-
 
 .grid {
-     width: 200px;
-     height: 400px;
-     background-color: chartreuse;
+     width: 202px;
+     height: 402px;
      display: flex;
      flex-wrap: wrap;
+     border-bottom: 3px solid beige;
 }
 
-.grid div {
+.grid__pixels {
     height: 20px;
     width: 20px;
+    border: .5px solid #3098ca5e;
+    border-radius: .2em;
 }
 
 .shapes {
-    background-color: coral;
+    border: .1em outset #f1f1f1;
+    border-radius: .3em;
+}
+
+.grid-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+    align-items: center;
+}
+
+.grid-right__info {
+    height: 180px;
+    background: linear-gradient(180deg, rgba(233,233,233,1) 48%, rgba(237,223,241,1) 75%, rgba(243,206,255,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 18px;
+    border-radius: 1em;
+    color: #716e69;
+    padding-top: 30px
 }
 
 .mini-grid {
-    margin-left: 50px;
-    width: 80px;
-    height: 80px;
+    width: 82px;
+    height: 102px;
+    /* background-color: #32b3e0; */
+    margin: auto 25px;
     display: flex;
     flex-wrap: wrap;
-    background-color: chartreuse;
 }
 
 .mini-grid div {
     height: 20px;
     width: 20px;
+}
+
+.btn {
+    width: 70%;
+    height: 35px;
+    border-radius: .3em;
+    background-color: #a450ff;
+    font-size: 18px;
+    color: #fff;
+    border: 3px groove;
+    margin: 20px 0;
+}
+
+.restart {
+    width: 50px;
+    height: 100px;
+    font-size: 20px;
+    background-color: chocolate;
 }
