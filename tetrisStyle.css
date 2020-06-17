@@ -103,6 +103,10 @@ body {
 
 /* ------MOBILE VIEW ------ */
 @media only screen and (min-width: 200px) and (max-width: 800px) {
+
+    .container {
+        align-items: center;
+    }
     
     .case-grid {
         width: 300px;
@@ -164,7 +168,15 @@ body {
         margin-right: 40px;  
     }
 
-    .controls-plus__i {
+    .controls-plus__left {
+        width: 30px;
+        height: 30px;
+        background: #264545;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+
+    .controls-plus__down {
         width: 30px;
         height: 90px;
         background: #264545;
@@ -179,25 +191,51 @@ body {
         border-bottom-right-radius: 6px;
     }
 
-    .controls-plus__left {
-        width: 30px;
-        height: 30px;
-        background: #264545;
-        border-top-left-radius: 6px;
-        border-bottom-left-radius: 6px;
-    }
-
     .controls-btn {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         background: crimson;
         border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .start {
         margin: 30px 0 0 20px;
+        
     }
 
+    .start, .turn {
+        flex-direction: column;
+    }
+
+    .turn p {
+        margin: 0 0 55px;
+    }
+
+    .grid-right {
+        margin: 10px;
+    }
+
+    .grid-right__info {
+        height: 110px;
+        width: 80px;
+        padding-top: 5px;
+    }
+
+    .grid-right__info h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .mini-grid {
+        transform: scale(.5);
+    }
+
+    button {
+        display: none;
+    }
 
 
 
