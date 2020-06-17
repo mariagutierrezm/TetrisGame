@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
         <script src="app.js" charset="utf-8"> </script>
         <link rel="stylesheet" href="tetrisStyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
@@ -14,15 +15,32 @@
         
 
         <div class="container">
-            
-            <div class="grid"></div>
-            <div class="grid-right">
-                <div class="grid-right__info">
-                    <div class="mini-grid"></div>
-                    <h3>SCORE:<span id="score">0</span></h3>
+                <div class="case-grid">
+                    <div class="case-grid__top">
+                        <div class="top-line"></div>
+                    </div>
+                    <div class="case-grid__screen">
+                        <div class="grid"></div>
+                    </div>
+                    <div class="case-grid__controls">
+                        <div class="controls-plus">
+                            <div class="controls-plus__left"></div>
+                            <div class="controls-plus__i"></div>
+                            <div class="controls-plus__right"></div>
+                        </div>
+                        
+                        <div class="controls-btn"></div>
+                    </div>
+    
                 </div>
-                <button class="text btn" id="start-button">Start/Pause</button>
-            </div>
+
+                <div class="grid-right">
+                    <div class="grid-right__info">
+                        <div class="mini-grid"></div>
+                        <h3>SCORE:<span id="score">0</span></h3>
+                    </div>
+                    <button class="text btn" id="start-button">Start/Pause</button>
+                </div>
         </div>
 
         
@@ -43,8 +61,12 @@
             }
             document.querySelector(".grid").innerHTML += htmlGrid;
             document.querySelector(".mini-grid").innerHTML += htmlMiniGrid;
+
+            if (window.screen.width <= 770 && window.screen.height >= 800) {
+                let mobile = document.querySelector(".title");
+                mobile.style.fontSize = '30px';
+            }
             
-            console.log(htmlMiniGrid);
         </script>
     </body>
 </html>

@@ -23,7 +23,6 @@ body {
 .container {
     display: flex;
     justify-content: center;
-    
 }
 
 .grid {
@@ -91,9 +90,104 @@ body {
     margin: 20px 0;
 }
 
-.restart {
+/* .restart {
     width: 50px;
     height: 100px;
     font-size: 20px;
     background-color: chocolate;
+} */
+
+.mobile-container {
+    display: none;
+}
+
+/* ------MOBILE VIEW ------ */
+@media only screen and (min-width: 200px) and (max-width: 800px) {
+    
+    .case-grid {
+        width: 300px;
+        height: 500px;
+        background: #e4e4e4;
+        border: 6px solid #264545;
+        border-radius: 20px;
+        border-bottom-right-radius: 100px;
+    }
+
+    .case-grid__top {
+        border-bottom: 4px solid #969696;
+    }
+
+    .top-line {
+        width: 250px;
+        height: 20px;
+        border-left: 4px solid #969696;
+        border-right: 4px solid #969696;
+        margin: 0 auto;
+    }
+
+    .case-grid__screen {
+        width: 213px;
+        /* background-color: #9A9C9E; */
+        background-image: url('https://www.transparenttextures.com/patterns/3px-tile.png?fbclid=IwAR0hofMgfGL_pRd8IjESUcxqDtNhg7YdRelvaUg3gRG5GjxbzoDaZyzYA_0');
+        margin: 15px auto 0;
+        border: 6px solid #264545;
+        border-radius: 20px;
+        height: 294px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .grid {
+        border-bottom: none;
+        transform: scale(.7);
+        margin-top: -60px;
+        background: #9A9C9E;
+    }
+
+    .grid__pixels {
+        border: none;
+    }
+
+    .case-grid__controls {
+        margin: 60px auto 0;
+    }
+
+    .controls-plus {
+        display: flex;
+        align-items: center;    
+    }
+
+    .controls-plus__i {
+        width: 30px;
+        height: 90px;
+        background: #264545;
+        border-radius: 6px;
+    }
+
+    .controls-plus__right {
+        width: 30px;
+        height: 30px;
+        background: #264545;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .controls-plus__left {
+        width: 30px;
+        height: 30px;
+        background: #264545;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+
+    .controls-btn {
+        width: 30px;
+        height: 30px;
+        color: crimson;
+    }
+
+
+
+
+    
 }
