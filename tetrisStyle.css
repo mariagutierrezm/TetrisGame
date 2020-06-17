@@ -107,6 +107,10 @@ body {
     .container {
         align-items: center;
     }
+
+    .title h1 {
+        font-size: 35px;
+    }
     
     .case-grid {
         width: 300px;
