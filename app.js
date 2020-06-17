@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0;
     const colors = ['rgb(255, 178, 111)', 'rgb(93, 255, 151)', 'rgb(220, 114, 255)', 'rgb(255, 135, 156)', 'rgb(255, 226, 122)']; 
     //     'purple', 'rgb(115,191,68)'
+    const controls = document.querySelector('.case-grid__controls');
 
     const lShape = [
         [1, width + 1, width * 2 + 1, 2],
@@ -70,18 +71,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function control(e) { 
-        if(e.keyCode === 37) {
-            moveLeft();
-        } else if (e.keyCode === 38) {
-            rotate();
-        } else if (e.keyCode === 39) {
-            moveRight();
-        } else if (e.keyCode === 40) {
-            moveDown();
+        
+        if(e.type === 'click') {
+            if(e.target.classList.contains('controls-plus__left')){
+                moveLeft();
+                console.log(e.target.classList);
+            } else if(e.target.classList.contains('controls-plus__right')) {
+                moveRight();
+            } else if(e.target.classList.contains('controls-plus__down')) {
+                moveDown();
+            } else if(e.target.classList.contains('turn')) {
+                rotate();
+            }
+        } else {
+            if(e.keyCode === 37) {
+                moveLeft();
+            } else if (e.keyCode === 38) {
+                rotate();
+            } else if (e.keyCode === 39) {
+                moveRight();
+            } else if (e.keyCode === 40) {
+                moveDown();
+            }
         }
+
     }
 
     document.addEventListener('keydown', control);
+    controls.addEventListener('click', control);
 
     function moveDown() {
         undraw(); 
@@ -117,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         draw();
     }
 
-    function moveRight() {
+    window.moveRight = function moveRight() {
         undraw();
         const isAtRightEdge = current.some(index => (currentPosition + index) % width === width-1); 
         
@@ -214,3 +231,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
+
