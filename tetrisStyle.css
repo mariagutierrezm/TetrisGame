@@ -106,7 +106,7 @@ body {
     
     .case-grid {
         width: 300px;
-        height: 500px;
+        height: 510px;
         background: #e4e4e4;
         border: 6px solid #264545;
         border-radius: 20px;
@@ -148,13 +148,20 @@ body {
         border: none;
     }
 
+    .shapes {
+        border: .1em outset #f1f1f1;
+    }
+
     .case-grid__controls {
-        margin: 60px auto 0;
+        margin: 30px auto 0;
+        display: flex;
+        justify-content: center;
     }
 
     .controls-plus {
         display: flex;
-        align-items: center;    
+        align-items: center;  
+        margin-right: 40px;  
     }
 
     .controls-plus__i {
@@ -183,8 +190,14 @@ body {
     .controls-btn {
         width: 30px;
         height: 30px;
-        color: crimson;
+        background: crimson;
+        border-radius: 50%;
     }
+
+    .start {
+        margin: 30px 0 0 20px;
+    }
+
 
 
 
