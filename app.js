@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let squares = Array.from(document.querySelectorAll('.grid div'));
     const width = 10;
     const scoreDisplay = document.getElementById('score');
-    const startBtn = document.getElementById('start-button');
+    const startBtns = document.querySelectorAll('.js-start');
     let nextRandom = 0;
     let timerId;
     let score = 0;
@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function control(e) { 
         
         if(e.type === 'click') {
+            
             if(e.target.classList.contains('controls-plus__left')){
                 moveLeft();
                 console.log(e.target.classList);
@@ -182,16 +183,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    startBtn.addEventListener('click', () => { 
-        if (timerId) { 
-            clearInterval(timerId);
-            timerId = null;
-        } else { 
-            draw(); 
-            timerId = setInterval(moveDown, 1000); 
-            nextRandom = Math.floor(Math.random() * shapes.length); 
-            displayShape();
-        } 
+    startBtns.forEach(start => {
+        start.addEventListener('click', () => { 
+            if (timerId) { 
+                clearInterval(timerId);
+                timerId = null;
+            } else { 
+                draw(); 
+                timerId = setInterval(moveDown, 1000); 
+                nextRandom = Math.floor(Math.random() * shapes.length); 
+                displayShape();
+            } 
+        });
     });
 
     function addScore() {
