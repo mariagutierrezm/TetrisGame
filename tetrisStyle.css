@@ -166,6 +166,11 @@ body {
         justify-content: center;
     }
 
+    .controls-plus__left:active, .controls-plus__down:active, .controls-plus__right:active, .controls-btn:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
     .controls-plus {
         display: flex;
         align-items: center;  
@@ -178,6 +183,7 @@ body {
         background: #264545;
         border-top-left-radius: 6px;
         border-bottom-left-radius: 6px;
+        box-shadow: 0 5px #999;
     }
 
     .controls-plus__down {
@@ -185,6 +191,7 @@ body {
         height: 90px;
         background: #264545;
         border-radius: 6px;
+        box-shadow: 0 5px #999;
     }
 
     .controls-plus__right {
@@ -193,6 +200,7 @@ body {
         background: #264545;
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
+        box-shadow: 0 5px #999;
     }
 
     .controls-btn {
@@ -203,13 +211,18 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 0 5px #999;
     }
 
     .start {
         margin: 30px 0 0 20px;
-        
+        position: relative;
     }
 
+    .start p {
+        margin-top: 22px;
+    }
+    
     .start, .turn {
         flex-direction: column;
     }
