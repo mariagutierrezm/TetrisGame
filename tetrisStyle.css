@@ -12,6 +12,10 @@ body {
     font-family: 'Teko', sans-serif;
 }
 
+.top-line, .case-grid__controls {
+    display: none;
+}
+
 .title {
     display: flex;
     justify-content: center;
@@ -23,6 +27,11 @@ body {
 .container {
     display: flex;
     justify-content: center;
+}
+
+.score {
+    font-size: 30px;
+    margin: 0;
 }
 
 .grid {
@@ -49,6 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: 35px;
+    margin-top: 40px;
     align-items: center;
 }
 
@@ -97,9 +107,7 @@ body {
     background-color: chocolate;
 } */
 
-.case-grid__controls {
-    display: none;
-}
+
 
 /* ------MOBILE VIEW ------ */
 @media only screen and (min-width: 200px) and (max-width: 800px) {
@@ -109,10 +117,10 @@ body {
         flex-direction: column;
     }
 
-    .title h1 {
-        font-size: 25px;
+    .title {
+        display: none;
     }
-    
+
     .case-grid {
         width: 300px;
         height: 510px;
@@ -127,18 +135,33 @@ body {
     }
 
     .top-line {
+        display: block;
         width: 250px;
-        height: 20px;
+        height: 28px;
         border-left: 4px solid #969696;
         border-right: 4px solid #969696;
         margin: 0 auto;
+    }
+
+    .top-line p {
+        font-size: 25px;
+        margin: 0;
+        text-align: center;
+        color: #00bf9c;
+        font-weight: bold;
+    }
+
+    .score {
+        margin: 0 0 0 10px;
+        font-size: 20px;
+        /* text-align: center; */
     }
 
     .case-grid__screen {
         width: 213px;
         /* background-color: #9A9C9E; */
         background-image: url('https://www.transparenttextures.com/patterns/3px-tile.png?fbclid=IwAR0hofMgfGL_pRd8IjESUcxqDtNhg7YdRelvaUg3gRG5GjxbzoDaZyzYA_0');
-        margin: 15px auto 0;
+        margin: 0 auto;
         border: 6px solid #264545;
         border-radius: 20px;
         height: 294px;
