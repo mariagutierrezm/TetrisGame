@@ -106,6 +106,7 @@ body {
 
     .container {
         align-items: center;
+        flex-direction: column;
     }
 
     .title h1 {
