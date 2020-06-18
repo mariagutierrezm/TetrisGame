@@ -127,7 +127,7 @@ body {
 
     .case-grid {
         width: 300px;
-        height: 510px;
+        height: 530px;
         background: #e4e4e4;
         border: 6px solid #264545;
         border-radius: 20px;
@@ -261,6 +261,7 @@ body {
 
     .grid-right {
         margin: 50px -67px 0;
+        height: 150px;
     }
 
     .grid-right__info {
