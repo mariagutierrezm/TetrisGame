@@ -196,7 +196,7 @@ body {
 
     .controls-plus__sides:active, .controls-plus__down:active, .controls-btn:active {
         box-shadow: 0 5px #635e5e;
-    transform: translateY(6px);
+        transform: translateY(6px);
     }
 
     .controls-plus {
