@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    var downTime;
+    
     function control(e) { 
         
         if(e.type === 'click') {
@@ -84,9 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 rotate();
             }
         } else if (e.type === 'touchstart') {
-                
-            // if(e.target.classList.contains('controls-plus__down')) {
-                moveDown(); console.log(e);
+            downTime = setInterval(() => {
+                 moveDown();
+            }, 90);
+                console.log(e);
+        }  else if (e.type === 'touchend') {
+            clearInterval(downTime);
+                console.log(e);
         } else {
             if(e.keyCode === 37) {
                 moveLeft();
