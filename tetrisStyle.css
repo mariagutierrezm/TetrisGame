@@ -127,11 +127,11 @@ body {
 
     .case-grid {
         width: 300px;
-        height: 530px;
+        height: 575px;
         background: #e4e4e4;
         border: 6px solid #264545;
         border-radius: 20px;
-        border-bottom-right-radius: 100px;
+        border-bottom-right-radius: 112px;
     }
 
     .case-grid__top {
@@ -189,7 +189,7 @@ body {
     }
 
     .case-grid__controls {
-        margin: 30px auto 0;
+        margin: 35px auto 0;
         display: flex;
         justify-content: center;
     }
@@ -259,6 +259,14 @@ body {
         margin: 0 0 55px;
     }
 
+    .controls-bars {
+        width: 5px;
+        height: 30px;
+        background: #b1b1b1;
+        transform: rotate(-35deg) translateY(70px) translateX(-124px);
+        box-shadow: 15px 0px 0px #b1b1b1, 30px 0px 0px #b1b1b1, 45px 0px 0px #b1b1b1, 60px 0px 0px #b1b1b1;
+    }
+
     .grid-right {
         margin: 50px -67px 0;
         height: 150px;
@@ -267,13 +275,24 @@ body {
     .grid-right__info {
         height: 128px;
         width: 80px;
+        position: relative;
         padding-top: 5px;
         background: none;
         background-color: rgba(16, 0, 255, 0.5);
+        border: 1px solid #264545;
     }
 
     .grid-right__info p {
         color: #45efdf;
+    }
+
+    .grid-right__info::after {
+        content: '';
+        position: absolute;
+        height: 40px;
+        width: 17px;
+        background-color: #264545;
+        right: -5px;
     }
 
     .mini-grid {
