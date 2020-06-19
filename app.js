@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if(e.type === 'click') {
             
-            if(e.target.classList.contains('controls-plus__left')){
+            if(e.target.classList.contains('left')){
                 moveLeft();
                 console.log(e.target.classList);
-            } else if(e.target.classList.contains('controls-plus__right')) {
+            } else if(e.target.classList.contains('right')) {
                 moveRight();
             } else if(e.target.classList.contains('controls-plus__down')) {
                 moveDown();
